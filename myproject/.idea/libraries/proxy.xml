@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="proxy">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/cglib-3.1-sources.jar!/src/proxy" />
+      <root url="jar://D:/cglib-3.1-sources.jar!/src/test" />
+    </SOURCES>
+  </library>
+</component>

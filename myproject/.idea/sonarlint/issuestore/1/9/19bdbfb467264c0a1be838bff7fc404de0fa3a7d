@@ -1,0 +1,19 @@
+
+I
+java:S1481Z".Remove this unused "lifeCycle" local variable.(‰ùÔÒÿÿÿÿÿ
+X
+java:S1854Z"=Remove this useless assignment to local variable "lifeCycle".(‰ùÔÒÿÿÿÿÿ
+\
+java:S2142S"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+N	java:S106g"9Replace this use of System.out or System.err by a logger.(…²®¯
+N	java:S106V"9Replace this use of System.out or System.err by a logger.(£ËÞê
+J
+java:S3740P"/Provide the parametrized type for this generic.(úÃº×üÿÿÿÿ
+>
+java:S1148T"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+œ
+java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(£•žöþÿÿÿÿ
+œ
+java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÓÌÉ’ÿÿÿÿÿ
+œ
+java:S1186k"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(óêóãùÿÿÿÿ

@@ -1,0 +1,10 @@
+
+V
+squid:S106-"9Replace this use of System.out or System.err by a logger.(ìÛÅ‚8Ä·…ßñ-
+Wsquid:S21754"9A "List<CaseInsensitiveString>" cannot contain a "String"(ãœà¥8œ­‹ßñ-
+ysquid:S2159,"VRemove this call to "equals"; comparisons between unrelated types always return false.(åíÛ«ÿÿÿÿÿ8æ™…ßñ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¦¸Â×8ð¬”ßñ-
+ssquid:S1206%"PThis class overrides "equals()" and should therefore also override "hashCode()".(Ý¢êÍýÿÿÿÿ8¡þ”ßñ-
+[
+squid:S106,"9Replace this use of System.out or System.err by a logger.(åíÛ«ÿÿÿÿÿ8‰ñ„ßñ-
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãÕ‡ƒ

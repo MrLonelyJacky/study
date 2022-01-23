@@ -1,0 +1,7 @@
+
+\squid:S2118$"@Make the "java.util.Set" class "Serializable" or don't write it.(á¤ìíþÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ØÖ¬ßûÿÿÿÿ
+[squid:S2147'"DCombine this catch with the one at line 37, which has the same body.(ï­£Ä
+Xsquid:S1075""ARefactor your code to get this URI from a customizable parameter.(µÃè¢
+?squid:S1148&"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148("#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

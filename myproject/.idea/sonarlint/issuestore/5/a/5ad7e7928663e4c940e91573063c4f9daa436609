@@ -1,0 +1,27 @@
+
+J
+java:S1125,"(Remove the literal "true" boolean value.(–¶ò¡ıÿÿÿÿ8¾‚äÀ.
+F
+java:S2140%")Use "java.util.Random.nextInt()" instead.(Ÿˆ¢Ï8¾‚äÀ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ƒŞ®îşÿÿÿÿ8¾‚äÀ.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(º¯û8ˆñ¾äÀ.
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(ıÍÑÍúÿÿÿÿ8şè¸äÀ.
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(€ù²îøÿÿÿÿ8¾‚äÀ.
+K
+java:S2140"")Use "java.util.Random.nextInt()" instead.(œÈ´¨ÿÿÿÿÿ8¾‚äÀ.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ÖúÙi8¾‚äÀ.
+F
+java:S1125)")Remove the literal "false" boolean value.(Íó÷8¾‚äÀ.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Á†¦8¾‚äÀ.
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(Ææ¼¼ÿÿÿÿÿ8şè¸äÀ.
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(…ëÉ¦ûÿÿÿÿ8Ó‹ÇäÀ.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(ˆœúí8şè¸äÀ.
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(Ì§±•8¾‚äÀ.
+h	java:S116"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¶à›8¾‚äÀ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¶›»ıÿÿÿÿ
+T	java:S1067"9Replace this use of System.out or System.err by a logger.(‰ÓŸ!8şè¸äÀ.
+K
+java:S2140?")Use "java.util.Random.nextInt()" instead.(Öñ£­üÿÿÿÿ8şè¸äÀ.
+K
+java:S21406")Use "java.util.Random.nextInt()" instead.(‹ßˆ¤ùÿÿÿÿ8şè¸äÀ.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(‰–§üùÿÿÿÿ8şè¸äÀ.

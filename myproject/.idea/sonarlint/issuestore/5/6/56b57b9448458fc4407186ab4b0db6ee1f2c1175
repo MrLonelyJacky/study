@@ -1,0 +1,10 @@
+
+nsquid:S1192"KDefine a constant instead of duplicating this literal "2018-01-01" 3 times.(Êœºêøÿÿÿÿ8¥‡¨’Ö-
+Gsquid:S2129'"$Remove this "BigDecimal" constructor(¸üß×ùÿÿÿÿ8šº¿±Ö-
+[
+squid:S106,"9Replace this use of System.out or System.err by a logger.(ã¿¢Ôùÿÿÿÿ8¥‡¨’Ö-
+Gsquid:S2129&"$Remove this "BigDecimal" constructor(µ²üıÿÿÿÿ8šº¿±Ö-
+\squid:UselessImportCheck"1Remove this unused import 'java.util.Comparator'.(î¹ó¹8šº¿±Ö-
+7squid:S17004"Rename field "order"(½ÃåØıÿÿÿÿ8¥‡¨’Ö-
+Dsquid:S2111'"!Use "BigDecimal.valueOf" instead.(¸üß×ùÿÿÿÿ8šº¿±Ö-
+Dsquid:S2111&"!Use "BigDecimal.valueOf" instead.(µ²üıÿÿÿÿ8šº¿±Ö-

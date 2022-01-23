@@ -1,0 +1,19 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãÕ‡ƒ8ú•ž—¸/
+U	java:S106b"9Replace this use of System.out or System.err by a logger.( Èþ¹8ú•ž—¸/
+X	java:S125Q"<This block of commented-out lines of code should be removed.(½‘Ñ³8ú•ž—¸/
+C
+java:S1481h"&Remove this unused "a" local variable.(“ô†«8ú•ž—¸/
+Z	java:S106f"9Replace this use of System.out or System.err by a logger.(å©«þüÿÿÿÿ8ú•ž—¸/
+U	java:S106g"9Replace this use of System.out or System.err by a logger.(òÓËƒ8ú•ž—¸/
+u
+java:S2975P"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ý›Àúÿÿÿÿ8ú•ž—¸/
+j
+java:S1182P"HUse super.clone() to create and seed the cloned instance to be returned.(ý›Àúÿÿÿÿ8ú•ž—¸/
+U	java:S106k"9Replace this use of System.out or System.err by a logger.(Áß‡Ü8ú•ž—¸/
+F
+java:S1659"$Declare "prefix" on a separate line.(¹ª×Ûüÿÿÿÿ8ú•ž—¸/
+N
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8ú•ž—¸/
+G
+java:S1659"%Declare "lineNum" on a separate line.(¹ª×Ûüÿÿÿÿ8ú•ž—¸/

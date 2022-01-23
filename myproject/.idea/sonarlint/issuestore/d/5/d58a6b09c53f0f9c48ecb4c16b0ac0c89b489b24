@@ -1,0 +1,16 @@
+
+U	java:S106["9Replace this use of System.out or System.err by a logger.(ÖÈÎþ8Âº½ ¼.
+T	java:S106b"9Replace this use of System.out or System.err by a logger.(‰Êéd8Âº½ ¼.
+c
+java:S2142]"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Âº½ ¼.
+c
+java:S2142s"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Âº½ ¼.
+E
+java:S1148t"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Âº½ ¼.
+£
+java:S1186:"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ßÇê†ÿÿÿÿÿ8Âº½ ¼.
+E
+java:S1148^"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Âº½ ¼.
+Z	java:S106v"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ8Âº½ ¼.
+W
+java:S1161V":Add the "@Override" annotation above this method signature(“–ýþ8Âº½ ¼.

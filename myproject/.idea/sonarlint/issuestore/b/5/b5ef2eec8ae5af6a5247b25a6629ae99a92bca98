@@ -1,0 +1,17 @@
+
+X	java:S125+"<This block of commented-out lines of code should be removed.(¼Öª±8Í‘ôÎ.
+X
+java:S1854H"6Remove this useless assignment to local variable "ch".(˜ ’øûÿÿÿÿ8¡âÙßÏ.
+a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(±ü€m8Œñ€³Ë.
+X
+java:S18543"6Remove this useless assignment to local variable "ch".(˜ ’øûÿÿÿÿ8àš“ŒÏ.
+U	java:S106*"9Replace this use of System.out or System.err by a logger.(ºùÆÉ8Ïå×íÌ.
+r	java:S116"QRename this field "_input" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àŒ’øÿÿÿÿ8ŒÊø²Ë.
+D
+java:S1481F"'Remove this unused "ch" local variable.(“¶˜ì8¡âÙßÏ.
+X
+java:S18541"6Remove this useless assignment to local variable "ch".(¾Â·éşÿÿÿÿ8àš“ŒÏ.
+I
+java:S14811"'Remove this unused "ch" local variable.(¾Â·éşÿÿÿÿ8àš“ŒÏ.
+b	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(š„Ä8ø‰‡³Ë.
+X	java:S1258"<This block of commented-out lines of code should be removed.(ÈŒİ”8ØÛ•Ï.

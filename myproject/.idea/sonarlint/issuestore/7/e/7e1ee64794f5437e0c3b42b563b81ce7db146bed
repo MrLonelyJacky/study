@@ -1,0 +1,5 @@
+
+]squid:S1118":Add a private constructor to hide the implicit public one.(õëê³üÿÿÿÿ8Ò‡ˆû-
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ôí”ï
+[squid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8½°£ˆû-
+^squid:UselessImportCheck"3Remove this unused import 'java.math.RoundingMode'.(¿ì†‹8Ñêû-

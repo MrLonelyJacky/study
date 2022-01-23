@@ -1,0 +1,11 @@
+
+U
+java:S1481"8Remove this unused "statisticsDisplayV4" local variable.(ÄÌ¸©8¼¸ÖÄæ/
+X	java:S125"<This block of commented-out lines of code should be removed.(Á×ÊÒ8Ë¶€Åæ/
+d
+java:S1128"BRemove this unused import 'designModel.observModelV3.WeatherData'.(éË½†ûÿÿÿÿ8ÜÑÄæ/
+s
+java:S1128"QRemove this unused import 'designModel.observModelV3.StatisticsConditionDisplay'.(Š®Ùóúÿÿÿÿ8ÜÑÄæ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËÕ÷åüÿÿÿÿ
+l
+java:S1128"ORemove this unused import 'designModel.observModelV3.CurrentConditionsDisplay'.(¥¹½Ë8ÜÑÄæ/

@@ -1,0 +1,9 @@
+
+[
+squid:S106#"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ8¤¦ƒÄŠ.
+[squid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ïâüÃŠ.
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ïâüÃŠ.
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ¯³ä
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8 ÄŠ.
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‘ÂËI8¢Ÿ‚ÄŠ.

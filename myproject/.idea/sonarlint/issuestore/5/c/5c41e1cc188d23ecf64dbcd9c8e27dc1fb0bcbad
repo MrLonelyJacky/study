@@ -1,0 +1,4 @@
+
+7	java:S131""Add a default case to this switch.(ÚÎÀˆ
+f	java:S116"QRename this field "_movie" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³³Íþ
+k	java:S116"VRename this field "_daysRented" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û˜ˆ‰

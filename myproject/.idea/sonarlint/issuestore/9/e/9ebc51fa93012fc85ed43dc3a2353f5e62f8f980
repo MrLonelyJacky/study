@@ -1,0 +1,17 @@
+
+Z	java:S106!"9Replace this use of System.out or System.err by a logger.(ëÈãæûÿÿÿÿ8ÀÀŠİ³.
+E	java:S108$")Either remove or fill this block of code.(Úîø›8ÀÀŠİ³.
+E
+java:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡±İ³.
+E
+java:S1148#"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8œ„Œİ³.
+y
+java:S1450"WRemove the "selector" field and declare it as a local variable in the relevant methods.(ú³à«øÿÿÿÿ8ÀÀŠİ³.
+H
+java:S1068"+Remove this unused "service" private field.(ç¢¾—8®›†İ³.
+n
+java:S2095"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(‚Ä‰¢8œİŠİ³.
+M
+java:S1481,"+Remove this unused "accept" local variable.(Ñğ“áúÿÿÿÿ8Æ‹²İ³.
+0
+java:S1220""Move this file to a named package.

@@ -1,0 +1,5 @@
+
+[
+squid:S106E"9Replace this use of System.out or System.err by a logger.(“™ð‰úÿÿÿÿ8Ê§±ÍŽ-
+wsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥–Â±8êë¥ÍŽ-
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( ÇøÑ

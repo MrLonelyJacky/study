@@ -1,0 +1,4 @@
+
+vsquid:S2975*"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ÜÁö­ûÿÿÿÿ8õÈ Ä÷-
+ysquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãÕ‡ƒ8õÈ Ä÷-
+nsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(´ªëüÿÿÿÿ8õÈ Ä÷-

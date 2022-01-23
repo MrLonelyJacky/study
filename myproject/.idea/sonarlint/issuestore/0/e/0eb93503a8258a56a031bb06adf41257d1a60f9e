@@ -1,0 +1,24 @@
+
+S	java:S1064"9Replace this use of System.out or System.err by a logger.(ÁµËşşÿÿÿÿ
+c
+java:S2142?"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8»†ÏŞÉ.
+>
+java:S11485"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¬™Öö
+Z	java:S106@"9Replace this use of System.out or System.err by a logger.(ÁµËşşÿÿÿÿ8»†ÏŞÉ.
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(‹Ç¼‚ÿÿÿÿÿ8»†ÏŞÉ.
+\
+java:S2142&"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+>
+java:S1148'"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+E
+java:S1148A"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8»†ÏŞÉ.
+h	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾¾Âüÿÿÿÿ
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ı¹¾È8–ºµäÉ.
+\
+java:S21423"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÓµÅ…øÿÿÿÿ8Ÿ´¼äÉ.
+N	java:S106)"9Replace this use of System.out or System.err by a logger.(Š×Ä
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(ÑÁÄ•şÿÿÿÿ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(şãÂùÿÿÿÿ
+h	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼Øóİøÿÿÿÿ

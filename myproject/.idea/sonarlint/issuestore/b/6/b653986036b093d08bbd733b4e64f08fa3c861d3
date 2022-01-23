@@ -1,0 +1,11 @@
+
+M
+java:S1874"2Remove this use of "Observable"; it is deprecated.(ó¨ú‚ÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËÕ÷åüÿÿÿÿ
+K
+java:S1874"0Remove this use of "Observer"; it is deprecated.(÷ùÃßûÿÿÿÿ
+M
+java:S1874"2Remove this use of "Observable"; it is deprecated.(ž‹›Àüÿÿÿÿ
+H
+java:S1874"2Remove this use of "Observable"; it is deprecated.(ê¬¶ 
+S	java:S106"9Replace this use of System.out or System.err by a logger.(îþŒ„ûÿÿÿÿ

@@ -1,0 +1,18 @@
+
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(¸¾¬ƒùÿÿÿÿ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(¨–©ƒ
+I
+java:S1128".Remove this unused import 'sun.misc.Launcher'.(¥ñŒÖüÿÿÿÿ
+>
+java:S1148!"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+I
+java:S1128"3Remove this unused import 'java.sql.DriverManager'.(“£°
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(¥ñŒÖüÿÿÿÿ
+N
+java:S1874&"3Remove this use of "newInstance"; it is deprecated.(Á²»şıÿÿÿÿ
+`
+java:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(ÅÄ‚†
+`
+java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(Êûÿ
+M	java:S106)"9Replace this use of System.out or System.err by a logger.(Ä­ o

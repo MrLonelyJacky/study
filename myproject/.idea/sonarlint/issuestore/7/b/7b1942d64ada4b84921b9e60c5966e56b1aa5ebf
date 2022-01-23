@@ -1,0 +1,30 @@
+
+T	java:S106>"9Replace this use of System.out or System.err by a logger.(áö…y8Ü†¥„â/
+N
+java:S1481%"1Remove this unused "selectionKey" local variable.(ê…„›8Ü†¥„â/
+M
+java:S1481<"+Remove this unused "newKey" local variable.(óÿ”šùÿÿÿÿ8Ü†¥„â/
+Z
+java:S1197U"8Move the array designator from the variable to the type.(¸Å™ÿûÿÿÿÿ8Ü†¥„â/
+Z
+java:S1197Z"8Move the array designator from the variable to the type.(¦ËÐúÿÿÿÿ8Ü†¥„â/
+Z
+java:S1197"8Move the array designator from the variable to the type.(­ãìóþÿÿÿÿ8Ü†¥„â/
+Z	java:S106W"9Replace this use of System.out or System.err by a logger.(úî—¿ùÿÿÿÿ8Ü†¥„â/
+U	java:S106N"9Replace this use of System.out or System.err by a logger.(¿—ÜÑ8Ü†¥„â/
+J
+java:S1481+"(Remove this unused "num" local variable.(ª‘óýøÿÿÿÿ8Ü†¥„â/
+7
+java:S1220""Move this file to a named package.8Ü†¥„â/
+m
+java:S2095"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(„Ìõa8Ü†¥„â/
+D
+java:S2189)""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8Ü†¥„â/
+T
+java:S1197"8Move the array designator from the variable to the type.(â–À
+8Ü†¥„â/
+c
+java:S2095"FUse try-with-resources or close this "Selector" in a "finally" clause.(÷Å¡ÿ8Ü†¥„â/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(†š¢Ðüÿÿÿÿ8Ü†¥„â/
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(½úçêúÿÿÿÿ8Ü†¥„â/

@@ -1,0 +1,23 @@
+
+V
+java:S3400"9Remove this method and declare a constant for this value.(Úåö8¹çÌÅŸ/
+L
+java:S3740"/Provide the parametrized type for this generic.(ª±Ó8¹çÌÅŸ/
+T	java:S106"9Replace this use of System.out or System.err by a logger.(’²®68¹çÌÅŸ/
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ş³ë»ıÿÿÿÿ8¹çÌÅŸ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(éßéÿ8¹çÌÅŸ/
+`
+java:S2133"CRemove this object instantiation and use "FinalPool.class" instead.(‘¤€8¹çÌÅŸ/
+C
+java:S1170"!Make this final field static too.(‘øâØûÿÿÿÿ8¹çÌÅŸ/
+E
+java:S1148!"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹çÌÅŸ/
+O
+java:S1128"2Remove this unused import 'jvm.chapter7.SubClass'.(ñ·8¹çÌÅŸ/
+Q
+java:S3740"/Provide the parametrized type for this generic.(³¸–¸üÿÿÿÿ8¹çÌÅŸ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¶ÎùÑ8¹çÌÅŸ/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•çè8¹çÌÅŸ/
+s	java:S116"RRename this field "JAVA_EE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘øâØûÿÿÿÿ8¹çÌÅŸ/
+L
+java:S3740"/Provide the parametrized type for this generic.(¾ééÖ8¹çÌÅŸ/

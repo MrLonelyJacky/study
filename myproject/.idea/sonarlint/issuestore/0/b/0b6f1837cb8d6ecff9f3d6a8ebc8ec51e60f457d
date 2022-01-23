@@ -1,0 +1,15 @@
+
+T
+squid:S106:"9Replace this use of System.out or System.err by a logger.(É“øÙÿÿÿÿÿ
+O
+squid:S1067"9Replace this use of System.out or System.err by a logger.(â«¯ž
+T
+squid:S1068"9Replace this use of System.out or System.err by a logger.(É“øÙÿÿÿÿÿ
+T
+squid:S106."9Replace this use of System.out or System.err by a logger.(©®µõþÿÿÿÿ
+]squid:S1075;"ARefactor your code to get this URI from a customizable parameter.(ðò ³ûÿÿÿÿ
+T
+squid:S106="9Replace this use of System.out or System.err by a logger.(²Ì®’ýÿÿÿÿ
+T
+squid:S1069"9Replace this use of System.out or System.err by a logger.(É“øÙÿÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ýì×¸ûÿÿÿÿ

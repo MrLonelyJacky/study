@@ -1,0 +1,28 @@
+
+W	java:S125¾"<This block of commented-out lines of code should be removed.(£àÖ³ıÿÿÿÿ
+R	java:S125¯"<This block of commented-out lines of code should be removed.(¬Ø¸æ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(É•¬ç
+I
+java:S1135·"2Complete the task associated to this TODO comment.(¶Æ˜á
+T	java:S106³"9Replace this use of System.out or System.err by a logger.(ƒìîüıÿÿÿÿ
+G
+java:S1481Â"0Remove this unused "bigDecimal2" local variable.(òî½Â
+S	java:S106j"9Replace this use of System.out or System.err by a logger.(ƒìîüıÿÿÿÿ
+U
+java:S1854Á">Remove this useless assignment to local variable "bigDecimal".( €Ÿ´
+:
+java:S1659"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ
+F
+java:S1481Á"/Remove this unused "bigDecimal" local variable.( €Ÿ´
+s	java:S127ÿ"XRefactor the code in order to not assign to this loop counter from within the loop body.(­–„úÿÿÿÿ
+W	java:S125·"<This block of commented-out lines of code should be removed.(ÎÿêÇüÿÿÿÿ
+V
+java:S1854Â"?Remove this useless assignment to local variable "bigDecimal2".(òî½Â
+O	java:S106Í"9Replace this use of System.out or System.err by a logger.(…ò£—
+O	java:S106¶"9Replace this use of System.out or System.err by a logger.(áˆË
+g	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¢Ş
+k
+java:S1149y"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(û›şöıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(–½Şé
+:
+java:S1659&"Declare "j" on a separate line.(¦¢Éëùÿÿÿÿ

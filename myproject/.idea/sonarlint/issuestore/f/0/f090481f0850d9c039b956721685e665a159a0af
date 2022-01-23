@@ -1,0 +1,17 @@
+
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(»Ó»Öýÿÿÿÿ
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(ÄÌÑ×úÿÿÿÿ
+]
+java:S2094"BRemove this empty class, write its code or make it an "interface".(ý“€Áýÿÿÿÿ
+\
+java:S2142("FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+>
+java:S1148>"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+>
+java:S1148)"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(ø¥Ÿ¿
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(¿‘‚°
+H
+java:S1135"2Complete the task associated to this TODO comment.(éÇÝ¢
+\
+java:S2142="FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€

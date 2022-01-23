@@ -1,0 +1,17 @@
+
+bsquid:S3358"DExtract this nested ternary operation into an independent statement.(ÅÜú©8æí©ŸŠ.
+\squid:S3400"9Remove this method and declare a constant for this value.(†Ÿèùøÿÿÿÿ8ı•å˜Š.
+Hsquid:S1172"*Remove this unused method parameter "set".(ãĞá‹8”®ç˜Š.
+Nsquid:S1172"+Remove this unused method parameter "list".(İ¶ÂÉşÿÿÿÿ8´ç˜Š.
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹‰¹ä
+\squid:S3400"9Remove this method and declare a constant for this value.(©¯‡Êüÿÿÿÿ8ŠÍä˜Š.
+V
+squid:S106+"9Replace this use of System.out or System.err by a logger.(øÂ„‰8ªÔò˜Š.
+\squid:S3400!"9Remove this method and declare a constant for this value.(†Ÿèùøÿÿÿÿ8İ†ı˜Š.
+\squid:S3400"9Remove this method and declare a constant for this value.(áğ°üÿÿÿÿÿ8İ†ı˜Š.
+Osquid:S1172"1Remove this unused method parameter "collection".(–ğ˜º8™ææ˜Š.
+\squid:S3400"9Remove this method and declare a constant for this value.(áğ°üÿÿÿÿÿ8ı•å˜Š.
+Osquid:S1172 "1Remove this unused method parameter "collection".(³Ã€8İ†ı˜Š.
+Nsquid:S1172"+Remove this unused method parameter "list".(¥ãğ‹ùÿÿÿÿ8İ†ı˜Š.
+[
+squid:S106/"9Replace this use of System.out or System.err by a logger.(ûÉ®Øüÿÿÿÿ8î½ƒ™Š.

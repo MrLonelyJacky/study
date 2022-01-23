@@ -1,0 +1,30 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8§ÅúªÙ/
+c
+java:S2142#"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8§ÅúªÙ/
+L
+java:S1481"*Remove this unused "param" local variable.(¤”¹œùÿÿÿÿ8§ÅúªÙ/
+E
+java:S1148$"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8§ÅúªÙ/
+E
+java:S1148<"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8²ÞúªÙ/
+E
+java:S1604("(Make this anonymous inner class a lambda(ÉãÃ®8²ÞúªÙ/
+E
+java:S1148""#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8§ÅúªÙ/
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8²ÞúªÙ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦òÚ…úÿÿÿÿ
+L
+java:S1481-"*Remove this unused "param" local variable.(¤”¹œùÿÿÿÿ8²ÞúªÙ/
+c
+java:S2142;"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8²ÞúªÙ/
+]	java:S125"<This block of commented-out lines of code should be removed.(ýû­¤þÿÿÿÿ8§ÅúªÙ/
+]	java:S125/"<This block of commented-out lines of code should be removed.(ýû­¤þÿÿÿÿ8²ÞúªÙ/
+E
+java:S1148:"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8²ÞúªÙ/
+E
+java:S1604"(Make this anonymous inner class a lambda(ÉãÃ®8§ÅúªÙ/
+a
+java:S2147#"DCombine this catch with the one at line 33, which has the same body.(ä ¹€8§ÅúªÙ/
+a
+java:S2147;"DCombine this catch with the one at line 57, which has the same body.(ä ¹€8²ÞúªÙ/

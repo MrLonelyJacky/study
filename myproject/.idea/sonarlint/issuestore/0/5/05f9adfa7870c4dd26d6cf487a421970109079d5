@@ -1,0 +1,12 @@
+
+i
+java:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(İŸƒøşÿÿÿÿ
+i
+java:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(êäŠåıÿÿÿÿ
+c
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ã¿ÖÎ
+e
+java:S1192"JDefine a constant instead of duplicating this literal "data2.txt" 3 times.(êäŠåıÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒ¨ÓÊÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(­¢¾şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ïù¼Š

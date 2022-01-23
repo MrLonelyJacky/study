@@ -1,0 +1,11 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹‰¹ä8ºÌÛ/
+L
+java:S1481:"*Remove this unused "start" local variable.(­‰¨Óşÿÿÿÿ8ºÌÛ/
+R
+java:S1191"5Use classes from the Java API instead of Sun classes.(¤œĞ8ºÌÛ/
+Q
+java:S1874="/Remove this use of "setYear"; it is deprecated.(Ñèí‡ÿÿÿÿÿ8ºÌÛ/
+X	java:S125"<This block of commented-out lines of code should be removed.(íôòØ8ºÌÛ/
+H
+java:S1481<"&Remove this unused "p" local variable.(Ø‚†üüÿÿÿÿ8ºÌÛ/

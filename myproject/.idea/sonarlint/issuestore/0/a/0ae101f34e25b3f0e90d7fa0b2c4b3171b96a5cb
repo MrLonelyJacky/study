@@ -1,0 +1,25 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(¯“ùÉ
+d	java:S116
+"PRename this field "_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ãÿv
+Q	java:S125"<This block of commented-out lines of code should be removed.(œ Õ
+E
+java:S3740"/Provide the parametrized type for this generic.(¯“ùÉ
+J
+java:S3740U"/Provide the parametrized type for this generic.(¢»úáûÿÿÿÿ
+{
+java:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(¯“ùÉ
+G
+java:S1153="1Directly append the argument of String.valueOf().(×“¿
+G
+java:S1153@"1Directly append the argument of String.valueOf().(¡¶Ôþ
+J
+java:S3740J"/Provide the parametrized type for this generic.(¢»úáûÿÿÿÿ
+2
+java:S1643<"Use a StringBuilder instead.(á¿Æ¨
+J
+java:S37407"/Provide the parametrized type for this generic.(¢»úáûÿÿÿÿ
+G
+java:S1153A"1Directly append the argument of String.valueOf().(æí—•
+h	java:S116"SRename this field "_rentals" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯“ùÉ

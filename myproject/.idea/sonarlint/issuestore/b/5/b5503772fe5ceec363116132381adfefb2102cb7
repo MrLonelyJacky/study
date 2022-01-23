@@ -1,0 +1,10 @@
+
+5
+java:S1700I"Rename field "blod"(õ÷ò„ùÿÿÿÿ8†—ýÚ³.
+Y
+java:S3066S"<Lower the visibility of this setter or remove it altogether.(®›ŸÒ8†—ýÚ³.
+P
+java:S1128".Remove this unused import 'java.util.EnumSet'.(ÍäÚ“úÿÿÿÿ8À¾Ë”Á/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ¯³ä8†—ýÚ³.
+/
+java:S17005"Rename field "side"(Êñ¬a8†—ýÚ³.

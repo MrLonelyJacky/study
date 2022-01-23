@@ -1,0 +1,27 @@
+
+P
+java:S2274?":Remove this call to "wait" or move it into a "while" loop.(äãÜÝ
+H
+java:S1135"2Complete the task associated to this TODO comment.(éÇÝ¢
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(ø¥Ÿ¿
+\
+java:S2142,"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+>
+java:S1148A"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+K
+java:S24462"0"notify" may not wake up the appropriate thread.(£‚¥®ýÿÿÿÿ
+P
+java:S2274+":Remove this call to "wait" or move it into a "while" loop.(äãÜÝ
+K
+java:S2446F"0"notify" may not wake up the appropriate thread.(£‚¥®ýÿÿÿÿ
+]
+java:S2094"BRemove this empty class, write its code or make it an "interface".(ý“€Áýÿÿÿÿ
+b
+java:S1128"ERemove this unused import 'java.util.concurrent.locks.ReentrantLock'.(òªø8¼Úä£/
+S	java:S106="9Replace this use of System.out or System.err by a logger.(ÄÌÑ×úÿÿÿÿ
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(¿‘‚°
+\
+java:S2142@"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(»Ó»Öýÿÿÿÿ
+>
+java:S1148-"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

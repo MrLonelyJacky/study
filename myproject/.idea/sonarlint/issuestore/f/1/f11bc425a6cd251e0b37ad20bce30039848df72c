@@ -1,0 +1,13 @@
+
+d
+java:S3014"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(æé™–üÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(ŒÓâ–
+S	java:S106"9Replace this use of System.out or System.err by a logger.(çéà©øÿÿÿÿ
+\
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+\
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+>
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+>
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

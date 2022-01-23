@@ -1,0 +1,19 @@
+
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(¬ÏŠ¦øÿÿÿÿ8´ã¢’Á/
+U	java:S106J"9Replace this use of System.out or System.err by a logger.(øèÖÃ8´ã¢’Á/
+E	java:S108:")Either remove or fill this block of code.(Úîø›8´ã¢’Á/
+D
+java:S2189"""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8´ã¢’Á/
+E
+java:S1148V"#Use a logger to log this exception.(‰œ‰Õúÿÿÿÿ8´ã¢’Á/
+Z	java:S106]"9Replace this use of System.out or System.err by a logger.(Ÿ¢°†øÿÿÿÿ8Ï¸¡’Á/
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(‹©œ³8´ã¢’Á/
+E
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ã¢’Á/
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(â´Ã…8´ã¢’Á/
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(î’‘áüÿÿÿÿ8´ã¢’Á/
+Z	java:S106^"9Replace this use of System.out or System.err by a logger.(øë×ùÿÿÿÿ8´ã¢’Á/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¤»…©şÿÿÿÿ8´ã¢’Á/
+E
+java:S11489"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ã¢’Á/

@@ -1,0 +1,6 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ñ¯³ä8ƒíÊ—á.
+C
+java:S1948"&Make "data" transient or serializable.(¼éñ8ƒíÊ—á.
+V
+java:S1144%"4Remove this unused private "BaseResult" constructor.(ÀÙİÁøÿÿÿÿ8ƒíÊ—á.

@@ -1,0 +1,20 @@
+
+G
+java:S1481'"*Remove this unused "count" local variable.(¸¨´ä8ğ ¹Öâ/
+N
+java:S14817",Remove this unused "strings" local variable.(˜ÉÙ”ùÿÿÿÿ8ğ ¹Öâ/
+U	java:S106("9Replace this use of System.out or System.err by a logger.(„–µ8ğ ¹Öâ/
+N
+java:S1612",Replace this lambda with a method reference.(¢ª¤¾øÿÿÿÿ8·‚âÖâ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(·»ä”8ğ ¹Öâ/
+i
+java:S3959"GRefactor this code so that this consumed stream pipeline is not reused.(¢ª¤¾øÿÿÿÿ8·‚âÖâ/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ßØèˆ8ğ ¹Öâ/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(¢ª¤¾øÿÿÿÿ8·‚âÖâ/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(¢ª¤¾øÿÿÿÿ8ˆàÖâ/
+Z	java:S106%"9Replace this use of System.out or System.err by a logger.(ÿœ»üÿÿÿÿ8ğ ¹Öâ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ÄÉ»™8ğ ¹Öâ/
+Q
+java:S3631"/Use "Arrays.stream" instead of "Arrays.asList".(’Ìïúÿÿÿÿ8Şàçç/
+N
+java:S1612",Replace this lambda with a method reference.(¢ª¤¾øÿÿÿÿ8ˆàÖâ/

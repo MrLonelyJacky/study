@@ -1,0 +1,5 @@
+
+squid:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(οεκ8–Τ›—ψ-
+qsquid:S2272"NAdd a "NoSuchElementException" for iteration beyond the end of the collection.(¤Ώπίύÿÿÿÿ8ΊΔψ-
+Hsquid:S00108C")Either remove or fill this block of code.(ςΫ΄»8‡ρ΅ψ-
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Τν”ο

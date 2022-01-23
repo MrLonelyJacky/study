@@ -1,0 +1,32 @@
+
+_
+java:S3014i"IRemove this use of "ThreadGroup". Prefer the use of "ThreadPoolExecutor".(ò Ì¡
+i
+java:S3776¾"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(“–ış
+?
+java:S1148Å"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+[
+java:S1124#"EReorder the modifiers to comply with the Java Language Specification.(ğŞÉê
+I
+java:S1135Ç"2Complete the task associated to this TODO comment.(©ó ¥
+T	java:S106Ã"9Replace this use of System.out or System.err by a logger.(Š£ÉÂúÿÿÿÿ
+`
+java:S1124!"EReorder the modifiers to comply with the Java Language Specification.(êÙù„ıÿÿÿÿ
+]
+java:S2142Ä"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+M
+java:S1135"2Complete the task associated to this TODO comment.(¯ÖÌÖüÿÿÿÿ
+I
+java:S1135¼"2Complete the task associated to this TODO comment.(©÷Öè
+n
+java:S1192"WDefine a constant instead of duplicating this literal "the pool is destroyed!" 5 times.(ã¡ı¸
+t	java:S135¿"YReduce the total number of break and continue statements in this loop to use at most one.(»İÄÀüÿÿÿÿ
+H
+java:S1135W"2Complete the task associated to this TODO comment.(ƒíõï
+V	java:S107,"AConstructor has 8 parameters, which is greater than 7 authorized.(±¸·ù
+N
+java:S1135…"2Complete the task associated to this TODO comment.(ƒ«ëıÿÿÿÿ
+N
+java:S1135È"2Complete the task associated to this TODO comment.(ÂŸ÷éúÿÿÿÿ
+M
+java:S11357"2Complete the task associated to this TODO comment.(£Íã¶ùÿÿÿÿ

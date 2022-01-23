@@ -1,0 +1,9 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ê®ùÚ
+Y
+java:S1128"<Remove this unused import 'java.util.concurrent.locks.Lock'.(µ“Ãˇ8Ê¬›ÂÜ/
+]
+java:S2222^";Unlock this lock along all executions paths of this method.(†„˘ò¯ˇˇˇˇ8Ê¬›ÂÜ/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(‹±ÇÄ˘ˇˇˇˇ8ı˜ß∆Ü/
+Z	java:S106p"9Replace this use of System.out or System.err by a logger.(…»Û˘˝ˇˇˇˇ8¿Äç«Ü/

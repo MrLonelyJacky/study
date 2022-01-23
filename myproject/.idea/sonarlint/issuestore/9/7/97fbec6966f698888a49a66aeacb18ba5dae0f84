@@ -1,0 +1,17 @@
+
+F
+java:S1135"2Complete the task associated to this TODO comment.(Ñ­K
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ÌÉÉèúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÌÉÉèúÿÿÿÿ
+j	java:S116"URename this field "MUTEX_READ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ĞŒ™
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(Áï¶¹ûÿÿÿÿ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(Å‰à
+H
+java:S1135"2Complete the task associated to this TODO comment.(—Ÿùä
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(­ûÏ üÿÿÿÿ
+G
+java:S1135"2Complete the task associated to this TODO comment.(ùÙúr
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Å‰à
+p	java:S116"VRename this field "MUTEX_WRITE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ÙÏàıÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(­ûÏ üÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Áï¶¹ûÿÿÿÿ
