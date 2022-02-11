@@ -41,5 +41,33 @@ public class OgnlTest {
         context.put ("author", author2);
         Object author = Ognl.getValue(Ognl.parseExpression("author"), context, context.getRoot());
         System.out.println(author);
+        Object username = Ognl.getValue(Ognl.parseExpression("author.name"), context, context.getRoot());
+        System.out.println(username);
+        Object username2 = Ognl.getValue(Ognl.parseExpression("#author.name"), context, context.getRoot());
+        System.out.println(username2);
+    }
+
+
+    @Test
+    public void test2() throws OgnlException {
+
+        Object email = Ognl.getValue(Ognl.parseExpression("author.getEmail()"), context, context.getRoot());
+        System.out.println(email);
+        Object username = Ognl.getValue(Ognl.parseExpression("author.name"), context, context.getRoot());
+        System.out.println(username);
+
+    }
+
+
+
+    @Test
+    public void test3() throws OgnlException {
+
+        Object email = Ognl.getValue(Ognl.parseExpression("author.getEmail()"), context, context.getRoot());
+        System.out.println(email);
+        Object username = Ognl.getValue(Ognl.parseExpression("author.name"), context, context.getRoot());
+        System.out.println(username);
+        Object username2 = Ognl.getValue(Ognl.parseExpression("#author.name"), context, context.getRoot());
+        System.out.println(username2);
     }
 }
