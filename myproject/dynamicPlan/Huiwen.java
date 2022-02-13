@@ -10,23 +10,23 @@ public class Huiwen {
         System.out.println(isHuiWen("aba"));
         System.out.println(isHuiWen("abba"));
         System.out.println(isHuiWen("abbc"));
+        dpSolve("babab");
     }
 
-    private int a=0;
+    private int a = 0;
     private int b;
 
     public void solve(String s, int i, int j) {
         int length = s.length();
 
 
-
         if (s.charAt(i) == s.charAt(j)) {
-            solve(s,i+1,j-1);
-        }else {
-            a=i;
-            b=j;
-            solve(s,i+1,j);
-            solve(s,i,j-1);
+            solve(s, i + 1, j - 1);
+        } else {
+            a = i;
+            b = j;
+            solve(s, i + 1, j);
+            solve(s, i, j - 1);
         }
 
 
@@ -52,19 +52,31 @@ public class Huiwen {
      * 动态规划解决最长回文子串，状态转移方程 dp[i][j] =  (s[i]==s[j])&&dp[i+1]==dp[j-1]
      * 边界条件 以及baseCase
      */
-    public static void dpSolve(String s){
-        int length= s.length();
+    public static void dpSolve(String s) {
+        int length = s.length();
         //定义dp数组表示s[i....j]是否回文串
         boolean dp[][] = new boolean[length][length];
         //base case
-        for (int i=0;i<length;i++){
-            dp[i][i]=true;
+        for (int i = 0; i < length; i++) {
+            dp[i][i] = true;
         }
         //
-        for (int i=1;i<length;i++){
-            for (int j=0;j<length;j++){
-                //if (j-i<3)
+        for (int j = 1; j < length; j++) {
+            for (int i = 0; i < j; i++) {
+                if (j - i < 3) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                }else if (s.charAt(i)==s.charAt(j)){
+                    dp[i][j] = dp[i+1][j-1];
+                }else {
+                    dp[i][j] = false;
+                }
             }
+        }
+        for (int i=0;i<length;i++){
+            for (int j=0;j<length;j++){
+                System.out.printf(dp[i][j]+",");
+            }
+            System.out.println("\n");
         }
     }
 
