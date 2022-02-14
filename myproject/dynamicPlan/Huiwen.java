@@ -10,7 +10,7 @@ public class Huiwen {
         System.out.println(isHuiWen("aba"));
         System.out.println(isHuiWen("abba"));
         System.out.println(isHuiWen("abbc"));
-        dpSolve("babab");
+        dpSolve("abbc");
     }
 
     private int a = 0;
@@ -60,6 +60,9 @@ public class Huiwen {
         for (int i = 0; i < length; i++) {
             dp[i][i] = true;
         }
+        int max = 0;
+        int resultI = -1;
+        int resultJ = -1;
         //
         for (int j = 1; j < length; j++) {
             for (int i = 0; i < j; i++) {
@@ -70,6 +73,11 @@ public class Huiwen {
                 }else {
                     dp[i][j] = false;
                 }
+                if (dp[i][j] && j-i>max){
+                    max = j-i;
+                    resultI = i;
+                    resultJ = j;
+                }
             }
         }
         for (int i=0;i<length;i++){
@@ -78,6 +86,7 @@ public class Huiwen {
             }
             System.out.println("\n");
         }
+        System.out.println(s.substring(resultI,resultJ+1));
     }
 
 }
