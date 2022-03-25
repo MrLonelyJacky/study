@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:myBean="http://www.example.org/schema/note"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.example.org/schema/note http://www.example.org/schema/note.xsd">
+        <myBean:note id="testNote" userName="aaa" email="ppp" />
+
+</beans>
