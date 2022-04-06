@@ -1,0 +1,5 @@
+<!ELEMENT note (to,from,head,body)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT head (#PCDATA)>
+        <!ELEMENT body (#PCDATA)>
