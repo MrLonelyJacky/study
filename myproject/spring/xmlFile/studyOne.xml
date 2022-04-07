@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ====================lookup-method属性注入begin==================== -->
+    <bean id="animal" class="spring.chapter2.Animal">
+        <!--注意:下面这句配置和lookup-method注入没有关系,我们只是为了出于演示和说明配置该bean-->
+        <property name="dog" ref="dog"/>
+        <!--lookup-method注入-->
+        <lookup-method name="createDog" bean="dog"/>
+    </bean>
+    <bean id="dog" class="spring.chapter2.Dog" scope="prototype"/>
+    <!-- ====================lookup-method属性注入end==================== -->
+    <bean id="replaceDog" class="spring.chapter2.ReplaceDog"/>
+    <bean id="originalDog" class="spring.chapter2.OriginalDog">
+        <replaced-method name="sayHello" replacer="replaceDog"/>
+    </bean>
+</beans>
