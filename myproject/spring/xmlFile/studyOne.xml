@@ -17,4 +17,9 @@
     <bean id="originalDog" class="spring.chapter2.OriginalDog">
         <replaced-method name="sayHello" replacer="replaceDog"/>
     </bean>
+
+    <bean id="person" class="spring.chapter5.BeanPerson" init-method="initMethod" destroy-method="destroyMethod"></bean>
+
+    <bean id="mselfIBeanPostProcessor"
+          class="spring.chapter5.MyInstantiationAwareBeanPostProcessor"/>
 </beans>
