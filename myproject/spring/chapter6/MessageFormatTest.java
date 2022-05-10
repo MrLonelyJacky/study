@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.convert.support.DefaultConversionService;
 
 import java.text.MessageFormat;
 import java.util.GregorianCalendar;
@@ -11,9 +12,12 @@ import java.util.Locale;
 
 public class MessageFormatTest {
 
+    private ApplicationContext context;
+
     @Before
     public void initXmlBeanFactory(){
-
+        String[] configs = {"spring/xmlFile/studyOne.xml"};
+        this.context = new ClassPathXmlApplicationContext(configs);
     }
 
     @Test
@@ -35,8 +39,7 @@ public class MessageFormatTest {
 
     @Test
     public void testResouceBoundle(){
-        String[] configs = {"spring/xmlFile/studyOne.xml"};
-        ApplicationContext context = new ClassPathXmlApplicationContext(configs);
+
         //直接通过容器访问国际化信息
         Object[] params = {"John",new GregorianCalendar().getTime(),1.0E3};
         // ch
@@ -55,4 +58,29 @@ public class MessageFormatTest {
         System.out.println(ev);
 
     }
+
+    @Test
+    public void testListener(){
+        TestEvent testEvent =new TestEvent("hello","msg");
+        context.publishEvent(testEvent);
+
+    }
+
+
+    @Test
+    public void  testStringToPhoneNumberConvert(){
+        DefaultConversionService defaultConversionService = new DefaultConversionService();
+        defaultConversionService.addConverter(new String2DateConvert());
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

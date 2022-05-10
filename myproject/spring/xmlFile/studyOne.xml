@@ -38,4 +38,14 @@
             <value>UTF-8</value>
         </property>
     </bean>
+
+    <bean id="testListener" class="spring.chapter6.TestListener" />
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="spring.chapter6.String2DateConvert" />
+            </list>
+        </property>
+    </bean>
 </beans>
