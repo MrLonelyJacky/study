@@ -48,4 +48,8 @@
             </list>
         </property>
     </bean>
+
+    <bean id="myLifeCycle" class="spring.chapter6.MyLifeCycle" />
+
+    <bean id="customComponent" class="spring.chapter6.CustomComponent" />
 </beans>

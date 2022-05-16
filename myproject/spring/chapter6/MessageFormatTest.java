@@ -74,7 +74,10 @@ public class MessageFormatTest {
     }
 
 
+    @Test
+    public void  testLifeCycle(){
 
+    }
 
 
 
