@@ -3,6 +3,8 @@ package spring.chapter5;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import spring.chapter2.Dog;
 import spring.chapter2.OriginalDog;
@@ -45,8 +47,14 @@ public class BeanPerson implements InitializingBean {
     }
 
     public static void main(String[] args) {
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("spring/xmlFile/studyOne.xml");
+        BeanPerson bean = ac.getBean(BeanPerson.class);
+        System.out.println(bean);
+
+
+
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("spring/xmlFile/studyOne.xml"));
         BeanPerson originalDog = xmlBeanFactory.getBean("person", BeanPerson.class);
-
+        originalDog.say("hahah");
     }
 }

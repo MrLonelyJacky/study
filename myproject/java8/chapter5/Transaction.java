@@ -1,8 +1,6 @@
 package java8.chapter5;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Transaction {
@@ -35,14 +33,24 @@ public class Transaction {
         Trader mario = new Trader("Mario","Milan");
         Trader alan = new Trader("Alan","Cambridge");
         Trader brian = new Trader("Brian","Cambridge");
-        List<Transaction> transactions = Arrays.asList(
+        List<Transaction> transactions = new ArrayList<>(Arrays.asList(
                 new Transaction(brian, 2011, 300),
                 new Transaction(raoul, 2012, 1000),
                 new Transaction(raoul, 2011, 400),
                 new Transaction(mario, 2012, 710),
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
-        );
+        ));
+
+        /*for (Transaction transaction: transactions){
+            transactions.remove(2);
+        }*/
+
+        transactions.stream().forEach(item->{
+            transactions.add(new Transaction(brian, 2011, 300));
+        });
+        transactions.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(
+                () -> new TreeSet<>(Comparator.comparing(Transaction::getValue))), ArrayList::new));
 
         List<Transaction> transactionList = transactions.stream().filter(item -> item.getYear() <= 2011)
                 .sorted(Comparator.comparing(Transaction::getValue))

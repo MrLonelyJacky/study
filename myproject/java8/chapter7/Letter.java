@@ -1,6 +1,7 @@
 package java8.chapter7;
 
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 /**
  * @author segi
@@ -24,4 +25,6 @@ public class Letter {
         String lameda_is_very_good = allFunction.apply("lameda is very good");
         System.out.println(lameda_is_very_good);
     }
+
+
 }
