@@ -1,4 +1,11 @@
 package spring.chapter7.service;
 
-public class DealService {
+import org.springframework.context.EmbeddedValueResolverAware;
+import org.springframework.util.StringValueResolver;
+
+public class DealService implements EmbeddedValueResolverAware {
+    @Override
+    public void setEmbeddedValueResolver(StringValueResolver resolver) {
+
+    }
 }

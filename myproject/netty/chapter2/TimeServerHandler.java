@@ -6,8 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class TimeServerHandler implements Runnable {
-
+public class TimeServerHandler implements Runnable{
     private Socket socket;
 
 
@@ -15,21 +14,47 @@ public class TimeServerHandler implements Runnable {
         this.socket = socket;
     }
 
+
     @Override
     public void run() {
+        BufferedReader in = null;
+        PrintWriter out = null;
         try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            PrintWriter out = new PrintWriter(this.socket.getOutputStream(), true);
-            while (true){
+            in = new BufferedReader(new InputStreamReader(
+                    this.socket.getInputStream()));
+            out = new PrintWriter(this.socket.getOutputStream(), true);
+
+            while (true) {
                 String body = in.readLine();
-                if (body==null){
+                if (body == null)
                     break;
-                }
-                System.out.println("receive message :"+body);
-                out.println(System.currentTimeMillis());
+                System.out.println("The time server receive order : " + body);
+                String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new java.util.Date(
+                        System.currentTimeMillis()).toString() : "BAD ORDER";
+                out.println(currentTime);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        } catch (Exception e) {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            if (out != null) {
+                out.close();
+                out = null;
+            }
+            if (this.socket != null) {
+                try {
+                    this.socket.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                this.socket = null;
+            }
         }
     }
 }
+
