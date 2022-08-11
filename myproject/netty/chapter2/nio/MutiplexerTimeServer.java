@@ -7,6 +7,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -47,7 +48,7 @@ public class MutiplexerTimeServer implements Runnable {
                 while (iterator.hasNext()) {
                     SelectionKey next = iterator.next();
                     iterator.remove();
-
+                    handleInput(next);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -71,9 +72,23 @@ public class MutiplexerTimeServer implements Runnable {
                 // read the data
                 SocketChannel sc = (SocketChannel) key.channel();
                 ByteBuffer readBuffer = ByteBuffer.allocate(1024); // 1MB 的缓冲区
-                int readBytes = sc.read(readBuffer); // 读取请求流
+                int readBytes = sc.read(readBuffer); // 读取请求流 写入buffer中
                 if (readBytes > 0) {
-
+                    //切换读模式  position（读写操作位置）此时为0了，limit为之前的position的位置(所有读写操作都是在工作区position--->)
+                    readBuffer.flip();
+                    byte[] bytes = new byte[readBuffer.remaining()];
+                    readBuffer.get(bytes);
+                    String body =new String(bytes,"utf-8");
+                    System.out.println("The time server receive order : " + body);
+                    String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new Date(System.currentTimeMillis()).toString() : "BAD ORDER";
+                    //向客户端发送数据
+                    doWrite(sc,currentTime);
+                }else if (readBytes == 0){
+                    //没有数据
+                }else {
+                    // 对端链路关闭
+                    key.cancel();
+                    sc.close();
                 }
             }
         }
@@ -82,5 +97,15 @@ public class MutiplexerTimeServer implements Runnable {
 
     public void stop() {
         this.stop = true;
+    }
+
+    private void doWrite(SocketChannel sc, String response) throws IOException {
+        if (response != null && response.trim().length() > 0) {
+            byte[] bytes = response.getBytes();
+            ByteBuffer writeBuffer = ByteBuffer.allocate(bytes.length);
+            writeBuffer.put(bytes);
+            writeBuffer.flip();//每次读写完数据后都要flip一把
+            sc.write(writeBuffer);
+        }
     }
 }
