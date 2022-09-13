@@ -133,11 +133,11 @@ public class TestSelect {
                 ServerSocketChannel nextServer = (ServerSocketChannel) next.channel();
 
                 if (next.isAcceptable()) {
-                    SocketChannel accept = channel1.accept();
+                    SocketChannel accept = nextServer.accept();
                     if (accept == null) {
                         System.out.println("重复消费了哥");
                     }
-                    TimeUnit.SECONDS.sleep(5);
+                    TimeUnit.SECONDS.sleep(3);
                     InetSocketAddress localAddress = (InetSocketAddress) nextServer.getLocalAddress();
                     System.out.println(localAddress.getPort() + "连接了客户端");
 
@@ -154,7 +154,8 @@ public class TestSelect {
      */
     @Test
     public void test11() throws IOException {
-        Socket socket = new Socket("localhost",8088);
+        SocketChannel socket = SocketChannel.open();
+        socket.connect(new InetSocketAddress("localhost", 8088));
         socket.close();
     }
 
