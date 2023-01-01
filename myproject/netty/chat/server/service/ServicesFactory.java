@@ -1,6 +1,8 @@
 package netty.chat.server.service;
 
 
+import netty.config.Config;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -14,7 +16,7 @@ public class ServicesFactory {
     static Map<Class<?>, Object> map = new ConcurrentHashMap<>();
 
     static {
-        /*try (InputStream in = Config.class.getResourceAsStream("/application.properties")) {
+        try (InputStream in = Config.class.getResourceAsStream("application.properties")) {
             properties = new Properties();
             properties.load(in);
             Set<String> names = properties.stringPropertyNames();
@@ -27,7 +29,7 @@ public class ServicesFactory {
             }
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             throw new ExceptionInInitializerError(e);
-        }*/
+        }
     }
 
     public static <T> T getService(Class<T> interfaceClass) {
