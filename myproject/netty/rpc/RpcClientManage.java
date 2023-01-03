@@ -8,10 +8,16 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.util.concurrent.DefaultPromise;
+import io.netty.util.concurrent.Promise;
 import netty.chat.protocal.MessageCodecSharable;
 import netty.chat.protocal.ProcotolFrameDecoder;
+import netty.chat.protocal.SequenceIdGenerator;
+import netty.chat.server.service.HelloService;
 import netty.rpc.handler.RpcResponseMessageHandler;
 import netty.rpc.message.RpcRequestMessage;
+
+import java.lang.reflect.Proxy;
 
 /**
  * @description:
@@ -25,6 +31,7 @@ public class RpcClientManage {
 
     /**
      * double check
+     *
      * @return
      */
     public static Channel getChannel() {
@@ -38,6 +45,28 @@ public class RpcClientManage {
             initChannel();
             return channel;
         }
+    }
+
+
+    public static <T> void getProxyService(Class<T> serviceClass) {
+        HelloService helloService = null;
+        helloService.sayHello("adad");
+        helloService.sayHello("121212");
+        Proxy.newProxyInstance(serviceClass.getClassLoader(), serviceClass.getInterfaces(), ((proxy, method, args) -> {
+            RpcRequestMessage rpcRequestMessage = new RpcRequestMessage(SequenceIdGenerator.nextId(), serviceClass.getName(), method.getName()
+                    , method.getReturnType(), method.getParameterTypes(), args);
+            Channel channel = getChannel();
+            channel.writeAndFlush(rpcRequestMessage);
+            DefaultPromise<Object> objectDefaultPromise = new DefaultPromise<>(channel.eventLoop());
+            RpcResponseMessageHandler.promiseMap.put(rpcRequestMessage.getSequenceId(),objectDefaultPromise);
+            Promise<Object> await = objectDefaultPromise.await();
+            if (await.isSuccess()){
+                return await.getNow();
+            }else {
+                throw new RuntimeException(await.cause());
+            }
+
+        }));
     }
 
     private static void initChannel() {
