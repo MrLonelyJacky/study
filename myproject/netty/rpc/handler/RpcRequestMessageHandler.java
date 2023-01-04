@@ -21,8 +21,9 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
     protected void channelRead0(ChannelHandlerContext ctx, RpcRequestMessage rpcRequestMessage) throws Exception {
         System.out.println("==============开始rpc调用=============");
         RpcResponseMessage rpcResponseMessage = new RpcResponseMessage();
+        rpcResponseMessage.setSequenceId(rpcRequestMessage.getSequenceId());
         try {
-            HelloService service = (HelloService) ServicesFactory.getService(Class.forName(rpcRequestMessage.getInterfaceName()));
+            Object service = ServicesFactory.getService(Class.forName(rpcRequestMessage.getInterfaceName()));
             Method method = service.getClass().getMethod(rpcRequestMessage.getMethodName(), rpcRequestMessage.getParameterTypes());
             Object invoke = method.invoke(service, rpcRequestMessage.getParameterValue());
             rpcResponseMessage.setReturnValue(invoke);

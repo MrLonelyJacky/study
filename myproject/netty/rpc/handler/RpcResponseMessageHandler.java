@@ -21,8 +21,8 @@ public class RpcResponseMessageHandler extends SimpleChannelInboundHandler<RpcRe
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcResponseMessage rpcRequestMessage) throws Exception {
         System.out.println("============rpc开始输出"+rpcRequestMessage+"============");
-
-        Promise<Object> promise = promiseMap.get(rpcRequestMessage.getSequenceId());
+        //这里用remove防止map越来越大
+        Promise<Object> promise = promiseMap.remove(rpcRequestMessage.getSequenceId());
         if (promise!=null){
             Object returnValue = rpcRequestMessage.getReturnValue();
             if (rpcRequestMessage.getExceptionValue()!=null){

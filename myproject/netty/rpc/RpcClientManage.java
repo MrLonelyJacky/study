@@ -48,25 +48,26 @@ public class RpcClientManage {
     }
 
 
-    public static <T> void getProxyService(Class<T> serviceClass) {
-        HelloService helloService = null;
-        helloService.sayHello("adad");
-        helloService.sayHello("121212");
-        Proxy.newProxyInstance(serviceClass.getClassLoader(), serviceClass.getInterfaces(), ((proxy, method, args) -> {
+    public static <T> T getProxyService(Class<T> serviceClass) {
+
+        Object o = Proxy.newProxyInstance(serviceClass.getClassLoader(), new Class[]{serviceClass}, ((proxy, method, args) -> {
             RpcRequestMessage rpcRequestMessage = new RpcRequestMessage(SequenceIdGenerator.nextId(), serviceClass.getName(), method.getName()
                     , method.getReturnType(), method.getParameterTypes(), args);
             Channel channel = getChannel();
-            channel.writeAndFlush(rpcRequestMessage);
+            //channel.eventLoop() 构造方法需要一个去异步处理的线程，虽然这里并没有用到异步
             DefaultPromise<Object> objectDefaultPromise = new DefaultPromise<>(channel.eventLoop());
-            RpcResponseMessageHandler.promiseMap.put(rpcRequestMessage.getSequenceId(),objectDefaultPromise);
+            RpcResponseMessageHandler.promiseMap.put(rpcRequestMessage.getSequenceId(), objectDefaultPromise);
+            channel.writeAndFlush(rpcRequestMessage);
             Promise<Object> await = objectDefaultPromise.await();
-            if (await.isSuccess()){
+            if (await.isSuccess()) {
                 return await.getNow();
-            }else {
+            } else {
                 throw new RuntimeException(await.cause());
             }
-
         }));
+        @SuppressWarnings("unchecked")
+        T result = (T) o;
+        return result;
     }
 
     private static void initChannel() {
@@ -100,15 +101,11 @@ public class RpcClientManage {
     }
 
     public static void main(String[] args) {
-
-        channel.writeAndFlush(new RpcRequestMessage(1, "netty.chat.server.service.HelloService", "sayHello"
-                , String.class, new Class[]{String.class}, new Object[]{"张三"}))
-                .addListener(promise -> {
-                    if (!promise.isSuccess()) {
-                        Throwable cause = promise.cause();
-                        System.out.println(cause);
-                    }
-                });
+        HelloService proxyService = getProxyService(HelloService.class);
+        String hahahha = proxyService.sayHello("hahahha");
+        System.out.println(hahahha);
+        String hehhehe = proxyService.sayHello("hehhehe");
+        System.out.println(hehhehe);
     }
 
 }
