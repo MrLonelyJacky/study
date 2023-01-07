@@ -42,6 +42,7 @@ public class IoDuplicateNioClient {
                     //如果是可读事件，则拿到对应的客户端发送的数据 读取
                     SocketChannel socketChannel = (SocketChannel) next.channel();
                     ByteBuffer allocate = ByteBuffer.allocate(16);
+                    //todo 之前设置了configure false所以如果没有数据不会阻塞
                     socketChannel.read(allocate);
                     allocate.flip();
                     debugBuffer(allocate);
