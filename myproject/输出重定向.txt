@@ -1,3 +1,0 @@
-java.io.PrintStream@7f31245a
-age:18
-我的小弟么
