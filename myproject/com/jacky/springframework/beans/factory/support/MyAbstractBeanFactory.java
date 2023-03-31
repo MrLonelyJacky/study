@@ -15,7 +15,7 @@ public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegist
     public Object getBean(String name) throws MyBeansException {
         //首先从单例注册表中获取，如果有则直接返回
         Object singleton = getSingleton(name);
-        if (singleton!=null){
+        if (singleton != null) {
             return singleton;
         }
         //获取bean的定义信息 并创建bean
