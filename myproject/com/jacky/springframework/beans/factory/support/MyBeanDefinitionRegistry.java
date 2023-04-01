@@ -4,7 +4,7 @@ import com.jacky.springframework.beans.MyBeansException;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 
 /**
- * @description:
+ * @description: brsn定义信息注册表
  * @author: jacky
  * @create: 2023-03-31 17:40
  **/

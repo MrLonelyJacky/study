@@ -24,7 +24,21 @@ public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegist
         return createBean(name, beanDefinition);
     }
 
+    @Override
+    public Object getBean(String name, Object... args) throws MyBeansException {
+        //首先从单例注册表中获取，如果有则直接返回
+        Object singleton = getSingleton(name);
+        if (singleton != null) {
+            return singleton;
+        }
+        //获取bean的定义信息 并创建bean
+        MyBeanDefinition beanDefinition = getBeanDefinition(name);
+        return createBean(name, beanDefinition, args);
+    }
+
     protected abstract MyBeanDefinition getBeanDefinition(String beanName) throws MyBeansException;
 
     protected abstract Object createBean(String beanName, MyBeanDefinition beanDefinition) throws MyBeansException;
+
+    protected abstract Object createBean(String beanName, MyBeanDefinition beanDefinition, Object[] args) throws MyBeansException;
 }

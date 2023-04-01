@@ -1,5 +1,6 @@
 package com.jacky.springframework.beans.factory.config;
 
+import com.jacky.springframework.beans.factory.PropertyValues;
 import lombok.Data;
 
 /**
@@ -10,9 +11,15 @@ import lombok.Data;
 @Data
 public class MyBeanDefinition {
     private Class beanClass;
+    private PropertyValues propertyValues;
 
     public MyBeanDefinition(Class beanClass) {
         this.beanClass = beanClass;
+        this.propertyValues = new PropertyValues();
     }
 
+    public MyBeanDefinition(Class beanClass, PropertyValues propertyValues) {
+        this.beanClass = beanClass;
+        this.propertyValues = propertyValues != null ? propertyValues : new PropertyValues();
+    }
 }
