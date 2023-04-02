@@ -25,4 +25,11 @@ public interface MyBeanDefinitionRegistry {
      * @throws MyBeansException
      */
     MyBeanDefinition getBeanDefinition(String beanName) throws MyBeansException;
+
+    /**
+     * 是否包含定义信息
+     * @param beanName
+     * @return
+     */
+    boolean containsBeanDefinition(String beanName);
 }

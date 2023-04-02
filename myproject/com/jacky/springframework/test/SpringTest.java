@@ -5,7 +5,9 @@ import com.jacky.springframework.beans.factory.PropertyValues;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 import com.jacky.springframework.beans.factory.config.MyBeanReference;
 import com.jacky.springframework.beans.factory.support.MyDefaultListableBeanFactory;
+import com.jacky.springframework.beans.factory.support.MyXmlBeanDefinitionReader;
 import org.junit.Test;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
 public class SpringTest {
     @Test
@@ -42,6 +44,17 @@ public class SpringTest {
         propertyValues.addPropertyValue(dao);
         myBeanDefinition.setPropertyValues(propertyValues);
         beanFactory.registerBeanDefinition("userService", myBeanDefinition);
+        UserService userService = (UserService) beanFactory.getBean("userService","jiaqi");
+        userService.queryUserInfo();
+        userService.queryUserInfoByDao();
+    }
+
+    @Test
+    public void test_BeanFactory4(){
+        // 1.初始化 BeanFactory
+        MyDefaultListableBeanFactory beanFactory = new MyDefaultListableBeanFactory();
+        MyXmlBeanDefinitionReader xmlBeanDefinitionReader = new MyXmlBeanDefinitionReader(beanFactory);
+        xmlBeanDefinitionReader.loadBeanDefinitions("E:\\project\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
         UserService userService = (UserService) beanFactory.getBean("userService","jiaqi");
         userService.queryUserInfo();
         userService.queryUserInfoByDao();

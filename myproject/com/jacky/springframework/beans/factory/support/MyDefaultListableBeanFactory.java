@@ -27,4 +27,9 @@ public class MyDefaultListableBeanFactory extends MyAbstractAutowireCapableBeanF
         return beanDefinitionMap.get(beanName);
     }
 
+    @Override
+    public boolean containsBeanDefinition(String beanName) {
+        return beanDefinitionMap.containsKey(beanName);
+    }
+
 }
