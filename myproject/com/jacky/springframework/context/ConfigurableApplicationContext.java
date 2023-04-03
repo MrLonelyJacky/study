@@ -13,4 +13,11 @@ public interface ConfigurableApplicationContext extends MyApplicationContext{
      */
     void refresh() throws MyBeansException;
 
+    /**
+     * 首先我们需要在 ConfigurableApplicationContext 接口中定义注册虚拟机钩子的方法
+     * registerShutdownHook 和手动执行关闭的方法 close。
+     */
+    void registerShutdownHook();
+
+    void close();
 }

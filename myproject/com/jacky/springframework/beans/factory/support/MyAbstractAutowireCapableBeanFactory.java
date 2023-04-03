@@ -3,6 +3,7 @@ package com.jacky.springframework.beans.factory.support;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jacky.springframework.beans.MyBeansException;
+import com.jacky.springframework.beans.factory.MyDisposableBean;
 import com.jacky.springframework.beans.factory.MyInitializingBean;
 import com.jacky.springframework.beans.factory.PropertyValue;
 import com.jacky.springframework.beans.factory.PropertyValues;
@@ -33,9 +34,16 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
         } catch (Exception e) {
             throw new MyBeansException("Instantiation of bean failed", e);
         }
-
+        // 注册实现了 DisposableBean 接口的 Bean 对象
+        registerDisposableBeanIfNecessary(beanName, bean, beanDefinition);
         addSingleton(beanName, bean);
         return bean;
+    }
+
+    private void registerDisposableBeanIfNecessary(String beanName, Object bean, MyBeanDefinition beanDefinition) {
+        if (bean instanceof MyDisposableBean || StrUtil.isNotEmpty(beanDefinition.getDestroyMethodName())) {
+            registerDisposableBean(beanName, new MyDisposableBeanAdapter(bean, beanName, beanDefinition));
+        }
     }
 
     @Override
@@ -49,6 +57,8 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
         } catch (Exception e) {
             throw new MyBeansException("Instantiation of bean failed", e);
         }
+        // 注册实现了 DisposableBean 接口的 Bean 对象
+        registerDisposableBeanIfNecessary(beanName, bean, beanDefinition);
         addSingleton(beanName, bean);
         return bean;
     }

@@ -61,4 +61,14 @@ public abstract class MyAbstractApplicationContext extends DefaultResourceLoader
     public Object getBean(String name, Object... args) throws MyBeansException {
         return getBeanFactory().getBean(name, args);
     }
+
+    @Override
+    public void registerShutdownHook() {
+        Runtime.getRuntime().addShutdownHook(new Thread(this::close));
+    }
+
+    @Override
+    public void close() {
+        getBeanFactory().destroySingletons();
+    }
 }
