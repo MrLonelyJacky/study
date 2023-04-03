@@ -6,6 +6,7 @@ import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 import com.jacky.springframework.beans.factory.config.MyBeanReference;
 import com.jacky.springframework.beans.factory.support.MyDefaultListableBeanFactory;
 import com.jacky.springframework.beans.factory.support.MyXmlBeanDefinitionReader;
+import com.jacky.springframework.context.MyClassPathXmlApplicationContext;
 import org.junit.Test;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
@@ -56,6 +57,14 @@ public class SpringTest {
         MyXmlBeanDefinitionReader xmlBeanDefinitionReader = new MyXmlBeanDefinitionReader(beanFactory);
         xmlBeanDefinitionReader.loadBeanDefinitions("E:\\project\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
         UserService userService = (UserService) beanFactory.getBean("userService","jiaqi");
+        userService.queryUserInfo();
+        userService.queryUserInfoByDao();
+    }
+
+    @Test
+    public void test_BeanFactory5(){
+        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\project\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
+        UserService userService = (UserService) myClassPathXmlApplicationContext.getBean("userService","jiaqi");
         userService.queryUserInfo();
         userService.queryUserInfoByDao();
     }

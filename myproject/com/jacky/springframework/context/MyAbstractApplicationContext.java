@@ -40,4 +40,25 @@ public abstract class MyAbstractApplicationContext extends DefaultResourceLoader
     protected abstract void refreshBeanFactory() throws MyBeansException;
 
     protected abstract MyConfigurableListableBeanFactory getBeanFactory();
+
+
+    @Override
+    public <T> Map<String, T> getBeansOfType(Class<T> type) throws MyBeansException {
+        return getBeanFactory().getBeansOfType(type);
+    }
+
+    @Override
+    public String[] getBeanDefinitionNames() {
+        return getBeanFactory().getBeanDefinitionNames();
+    }
+
+    @Override
+    public Object getBean(String name) throws MyBeansException {
+        return getBeanFactory().getBean(name);
+    }
+
+    @Override
+    public Object getBean(String name, Object... args) throws MyBeansException {
+        return getBeanFactory().getBean(name, args);
+    }
 }
