@@ -9,4 +9,5 @@
     </bean>
 
     <bean class="com.jacky.springframework.test.UserServiceBeanPostProcessor"/>
+    <bean class="com.jacky.springframework.test.UserServiceBeanFactoryProcessor"/>
 </beans>

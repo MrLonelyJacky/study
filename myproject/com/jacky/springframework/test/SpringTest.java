@@ -67,5 +67,6 @@ public class SpringTest {
         UserService userService = (UserService) myClassPathXmlApplicationContext.getBean("userService","jiaqi");
         userService.queryUserInfo();
         userService.queryUserInfoByDao();
+        System.out.println(userService);
     }
 }

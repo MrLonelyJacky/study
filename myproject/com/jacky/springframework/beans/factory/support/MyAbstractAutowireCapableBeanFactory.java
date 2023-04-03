@@ -1,7 +1,9 @@
 package com.jacky.springframework.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.StrUtil;
 import com.jacky.springframework.beans.MyBeansException;
+import com.jacky.springframework.beans.factory.MyInitializingBean;
 import com.jacky.springframework.beans.factory.PropertyValue;
 import com.jacky.springframework.beans.factory.PropertyValues;
 import com.jacky.springframework.beans.factory.config.MyAutowireCapableBeanFactory;
@@ -10,6 +12,7 @@ import com.jacky.springframework.beans.factory.config.MyBeanPostProcessor;
 import com.jacky.springframework.beans.factory.config.MyBeanReference;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 /**
  * @description: 自动装配的工厂
@@ -22,8 +25,15 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
 
     @Override
     protected Object createBean(String beanName, MyBeanDefinition beanDefinition) throws MyBeansException {
-        Object bean = instantiationStrategy.instantiate(beanDefinition, beanName, null, null);
-        applyPropertyValues(beanName, bean, beanDefinition);
+        Object bean;
+        try {
+            bean = instantiationStrategy.instantiate(beanDefinition, beanName, null, null);
+            applyPropertyValues(beanName, bean, beanDefinition);
+            bean = initializeBean(beanName, bean, beanDefinition);
+        } catch (Exception e) {
+            throw new MyBeansException("Instantiation of bean failed", e);
+        }
+
         addSingleton(beanName, bean);
         return bean;
     }
@@ -65,7 +75,7 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
         return result;
     }
 
-    private Object initializeBean(String beanName, Object bean, MyBeanDefinition beanDefinition) {
+    private Object initializeBean(String beanName, Object bean, MyBeanDefinition beanDefinition) throws Exception {
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
         // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
         invokeInitMethods(beanName, wrappedBean, beanDefinition);
@@ -73,7 +83,21 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
         return wrappedBean;
     }
 
-    private void invokeInitMethods(String beanName, Object wrappedBean, MyBeanDefinition beanDefinition) {
+    private void invokeInitMethods(String beanName, Object wrappedBean, MyBeanDefinition beanDefinition) throws Exception {
+        // 1. 实现接口 InitializingBean
+        if (wrappedBean instanceof MyInitializingBean) {
+            ((MyInitializingBean) wrappedBean).afterPropertiesSet();
+        }
+
+        // 2. 配置信息 init-method {判断是为了避免二次执行销毁}
+        String initMethodName = beanDefinition.getInitMethodName();
+        if (StrUtil.isNotEmpty(initMethodName)) {
+            Method initMethod = beanDefinition.getBeanClass().getMethod(initMethodName);
+            if (null == initMethod) {
+                throw new MyBeansException("Could not find an init method named '" + initMethodName + "' on bean with name '" + beanName + "'");
+            }
+            initMethod.invoke(wrappedBean);
+        }
     }
 
     private Object createBeanInstance(String beanName, MyBeanDefinition beanDefinition, Object[] args) {

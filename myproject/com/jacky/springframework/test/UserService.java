@@ -11,6 +11,8 @@ public class UserService {
 
     private UserDao userDao;
 
+    private String company;
+
     public UserService() {
     }
 

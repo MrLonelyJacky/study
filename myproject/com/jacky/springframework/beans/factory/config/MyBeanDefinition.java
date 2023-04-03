@@ -13,6 +13,10 @@ public class MyBeanDefinition {
     private Class beanClass;
     private PropertyValues propertyValues;
 
+    private String initMethodName;
+
+    private String destroyMethodName;
+
     public MyBeanDefinition(Class beanClass) {
         this.beanClass = beanClass;
         this.propertyValues = new PropertyValues();
