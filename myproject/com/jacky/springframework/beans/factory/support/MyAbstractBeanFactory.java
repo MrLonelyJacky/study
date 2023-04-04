@@ -4,6 +4,8 @@ import com.jacky.springframework.beans.MyBeansException;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 import com.jacky.springframework.beans.factory.config.MyBeanPostProcessor;
 import com.jacky.springframework.beans.factory.config.MyConfigurableBeanFactory;
+import com.jacky.springframework.util.ClassUtils;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
  * @create: 2023-03-31 14:42
  **/
 public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegistry implements MyConfigurableBeanFactory {
+    private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
 
     /**
      * BeanPostProcessors to apply in createBean
@@ -59,5 +62,9 @@ public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegist
     public void addBeanPostProcessor(MyBeanPostProcessor beanPostProcessor) {
         this.beanPostProcessors.remove(beanPostProcessor);
         this.beanPostProcessors.add(beanPostProcessor);
+    }
+
+    public ClassLoader getBeanClassLoader() {
+        return this.beanClassLoader;
     }
 }

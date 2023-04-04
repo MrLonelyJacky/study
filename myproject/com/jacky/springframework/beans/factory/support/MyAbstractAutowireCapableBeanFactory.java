@@ -3,10 +3,7 @@ package com.jacky.springframework.beans.factory.support;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jacky.springframework.beans.MyBeansException;
-import com.jacky.springframework.beans.factory.MyDisposableBean;
-import com.jacky.springframework.beans.factory.MyInitializingBean;
-import com.jacky.springframework.beans.factory.PropertyValue;
-import com.jacky.springframework.beans.factory.PropertyValues;
+import com.jacky.springframework.beans.factory.*;
 import com.jacky.springframework.beans.factory.config.MyAutowireCapableBeanFactory;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 import com.jacky.springframework.beans.factory.config.MyBeanPostProcessor;
@@ -85,10 +82,26 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
         return result;
     }
 
-    private Object initializeBean(String beanName, Object bean, MyBeanDefinition beanDefinition) throws Exception {
+    private Object initializeBean(String beanName, Object bean, MyBeanDefinition beanDefinition)  {
+        // invokeAwareMethods
+        if (bean instanceof MyAware) {
+            if (bean instanceof MyBeanFactoryAware) {
+                ((MyBeanFactoryAware) bean).setBeanFactory(this);
+            }
+            if (bean instanceof MyBeanClassLoaderAware){
+                ((MyBeanClassLoaderAware) bean).setBeanClassLoader(getBeanClassLoader());
+            }
+            if (bean instanceof MyBeanNameAware) {
+                ((MyBeanNameAware) bean).setBeanName(beanName);
+            }
+        }
         Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
         // 待完成内容：invokeInitMethods(beanName, wrappedBean, beanDefinition);
-        invokeInitMethods(beanName, wrappedBean, beanDefinition);
+        try {
+            invokeInitMethods(beanName, wrappedBean, beanDefinition);
+        } catch (Exception e) {
+            throw new MyBeansException("Invocation of init method of bean[" + beanName + "] failed", e);
+        }
         wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
         return wrappedBean;
     }
