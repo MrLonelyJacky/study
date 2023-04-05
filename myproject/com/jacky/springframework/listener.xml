@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+
+    <bean class="com.jacky.springframework.test.CustomEventListener"/>
+    <bean class="com.jacky.springframework.test.MqContextRefreshEventListener"/>
+
+</beans>

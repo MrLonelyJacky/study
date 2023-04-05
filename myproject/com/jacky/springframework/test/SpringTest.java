@@ -90,4 +90,12 @@ public class SpringTest {
         userService.queryUserMapperInfo();
         System.out.println(userService);
     }
+
+    @Test
+    public void test_BeanFactory8(){
+        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\projectFile\\study\\myproject\\com\\jacky\\springframework\\listener.xml");
+        myClassPathXmlApplicationContext.registerShutdownHook();
+        myClassPathXmlApplicationContext.publishEvent(new CustomerEvent(myClassPathXmlApplicationContext,1L,"i love my mother and father"));
+
+    }
 }

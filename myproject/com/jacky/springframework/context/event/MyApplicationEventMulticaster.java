@@ -1,0 +1,28 @@
+package com.jacky.springframework.context.event;
+
+import com.jacky.springframework.context.MyApplicationEvent;
+import com.jacky.springframework.context.MyApplicationListener;
+
+/**
+ * 广播器
+ */
+public interface MyApplicationEventMulticaster {
+    /**
+     * Add a listener to be notified of all events.
+     * @param listener the listener to add
+     */
+    void addApplicationListener(MyApplicationListener<?> listener);
+
+    /**
+     * Remove a listener from the notification list.
+     * @param listener the listener to remove
+     */
+    void removeApplicationListener(MyApplicationListener<?> listener);
+
+    /**
+     * Multicast the given application event to appropriate listeners.
+     * @param event the event to multicast
+     */
+    void multicastEvent(MyApplicationEvent event);
+
+}
