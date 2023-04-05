@@ -44,21 +44,21 @@ public class UserService implements MyInitializingBean, MyDisposableBean, MyBean
 
     @Override
     public void setBeanClassLoader(ClassLoader classLoader) {
-
+        System.out.println("感知classLoader");
     }
 
     @Override
     public void setBeanFactory(MyBeanFactory beanFactory) throws MyBeansException {
-
+        System.out.println("感知beanFactory");
     }
 
     @Override
     public void setBeanName(String name) {
-
+        System.out.println("感知beanName");
     }
 
     @Override
     public void setApplicationContext(MyApplicationContext applicationContext) throws MyBeansException {
-
+        System.out.println("感知上下文");
     }
 }

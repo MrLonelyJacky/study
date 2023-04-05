@@ -81,13 +81,15 @@ public class MyXmlBeanDefinitionReader extends MyAbstractBeanDefinitionReader{
             if (StrUtil.isEmpty(beanName)) {
                 beanName = StrUtil.lowerFirst(clazz.getSimpleName());
             }
-
+            String beanScope = bean.getAttribute("scope");
             // 定义Bean
             MyBeanDefinition beanDefinition = new MyBeanDefinition(clazz);
             //额外设置到beanDefinition中
             beanDefinition.setInitMethodName(initMethod);
             beanDefinition.setDestroyMethodName(destroyMethodName);
-
+            if (StrUtil.isNotEmpty(beanScope)) {
+                beanDefinition.setScope(beanScope);
+            }
             // 读取属性并填充
             for (int j = 0; j < bean.getChildNodes().getLength(); j++) {
                 if (!(bean.getChildNodes().item(j) instanceof Element)) continue;

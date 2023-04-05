@@ -72,7 +72,7 @@ public class SpringTest {
 
     @Test
     public void test_BeanFactory6(){
-        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\project\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
+        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\projectFile\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
         myClassPathXmlApplicationContext.registerShutdownHook();
         UserService userService = (UserService) myClassPathXmlApplicationContext.getBean("userService","jiaqi");
         userService.queryUserInfo();
