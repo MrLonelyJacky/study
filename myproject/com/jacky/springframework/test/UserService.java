@@ -17,6 +17,8 @@ public class UserService implements MyInitializingBean, MyDisposableBean, MyBean
 
     private String company;
 
+    private IUserMapper userMapper;
+
     public UserService() {
     }
 
@@ -26,6 +28,10 @@ public class UserService implements MyInitializingBean, MyDisposableBean, MyBean
 
     public void queryUserInfo() {
         System.out.println("查询用户信息：" + name);
+    }
+
+    public String queryUserMapperInfo() {
+        return userMapper.queryUserName(uId);
     }
 
     public void queryUserInfoByDao() {

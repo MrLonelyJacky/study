@@ -15,6 +15,8 @@ import java.util.Set;
  * @create: 2023-03-31 15:08
  **/
 public  class MyDefaultSingletonBeanRegistry implements MySingletonBeanRegistry {
+    protected static final Object NULL_OBJECT = new Object();
+
     private Map<String, Object> singletonObjects = new HashMap<>();
 
     protected final Map<String, MyDisposableBean> disposableBeans = new LinkedHashMap<>();
@@ -26,7 +28,7 @@ public  class MyDefaultSingletonBeanRegistry implements MySingletonBeanRegistry 
 
     @Override
     public void registerSingleton(String beanName, Object singletonObject) {
-        //todo register
+        singletonObjects.put(beanName, singletonObject);
     }
 
     protected void addSingleton(String beanName, Object singletonObject) {

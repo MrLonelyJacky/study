@@ -79,4 +79,15 @@ public class SpringTest {
         userService.queryUserInfoByDao();
         System.out.println(userService);
     }
+
+    @Test
+    public void test_BeanFactory7(){
+        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\project\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
+        myClassPathXmlApplicationContext.registerShutdownHook();
+        UserService userService = (UserService) myClassPathXmlApplicationContext.getBean("userService","jiaqi");
+        userService.queryUserInfo();
+        userService.queryUserInfoByDao();
+        userService.queryUserMapperInfo();
+        System.out.println(userService);
+    }
 }

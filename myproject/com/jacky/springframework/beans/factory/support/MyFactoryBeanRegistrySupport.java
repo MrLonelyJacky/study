@@ -1,5 +1,8 @@
 package com.jacky.springframework.beans.factory.support;
 
+import com.jacky.springframework.beans.MyBeansException;
+import com.jacky.springframework.beans.factory.MyFactoryBean;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,10 +15,37 @@ import java.util.concurrent.ConcurrentHashMap;
  * 所以额外提供了 getObjectFromFactoryBean 进行逻辑包装，这部分的操作方式是不和你日常做的业务逻辑开发非常相似。
  * 从Redis取数据，如果为空就从数据库获取并写入Redis
  */
-public class MyFactoryBeanRegistrySupport extends MyDefaultSingletonBeanRegistry{
+public abstract class MyFactoryBeanRegistrySupport extends MyDefaultSingletonBeanRegistry{
 
     /**
      * Cache of singleton objects created by FactoryBeans: FactoryBean name --> object
      */
-    private final Map<String, Object> factoryBeanObjectCache = new ConcurrentHashMap<String, Object>();
+    private final Map<String, Object> factoryBeanObjectCache = new ConcurrentHashMap<>();
+
+
+    protected Object getCachedObjectForFactoryBean(String beanName) {
+        Object object = this.factoryBeanObjectCache.get(beanName);
+        return (object != NULL_OBJECT ? object : null);
+    }
+
+    protected Object getObjectFromFactoryBean(MyFactoryBean factory, String beanName) {
+        if (factory.isSingleton()) {
+            Object object = this.factoryBeanObjectCache.get(beanName);
+            if (object == null) {
+                object = doGetObjectFromFactoryBean(factory, beanName);
+                this.factoryBeanObjectCache.put(beanName, (object != null ? object : NULL_OBJECT));
+            }
+            return (object != NULL_OBJECT ? object : null);
+        } else {
+            return doGetObjectFromFactoryBean(factory, beanName);
+        }
+    }
+
+    private Object doGetObjectFromFactoryBean(final MyFactoryBean factory, final String beanName){
+        try {
+            return factory.getObject();
+        } catch (Exception e) {
+            throw new MyBeansException("FactoryBean threw exception on object[" + beanName + "] creation", e);
+        }
+    }
 }

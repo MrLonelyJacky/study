@@ -1,6 +1,7 @@
 package com.jacky.springframework.beans.factory.support;
 
 import com.jacky.springframework.beans.MyBeansException;
+import com.jacky.springframework.beans.factory.MyFactoryBean;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
 import com.jacky.springframework.beans.factory.config.MyBeanPostProcessor;
 import com.jacky.springframework.beans.factory.config.MyConfigurableBeanFactory;
@@ -15,7 +16,7 @@ import java.util.List;
  * @author: jacky
  * @create: 2023-03-31 14:42
  **/
-public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegistry implements MyConfigurableBeanFactory {
+public abstract class MyAbstractBeanFactory extends MyFactoryBeanRegistrySupport implements MyConfigurableBeanFactory {
     private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
 
     /**
@@ -25,27 +26,13 @@ public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegist
 
     @Override
     public Object getBean(String name) throws MyBeansException {
-        //首先从单例注册表中获取，如果有则直接返回
-        Object singleton = getSingleton(name);
-        if (singleton != null) {
-            return singleton;
-        }
-        //获取bean的定义信息 并创建bean
-        MyBeanDefinition beanDefinition = getBeanDefinition(name);
 
-        return createBean(name, beanDefinition);
+        return  doGetBean(name, null);
     }
 
     @Override
     public Object getBean(String name, Object... args) throws MyBeansException {
-        //首先从单例注册表中获取，如果有则直接返回
-        Object singleton = getSingleton(name);
-        if (singleton != null) {
-            return singleton;
-        }
-        //获取bean的定义信息 并创建bean
-        MyBeanDefinition beanDefinition = getBeanDefinition(name);
-        return createBean(name, beanDefinition, args);
+        return doGetBean(name, args);
     }
 
     protected abstract MyBeanDefinition getBeanDefinition(String beanName) throws MyBeansException;
@@ -66,5 +53,32 @@ public abstract class MyAbstractBeanFactory extends MyDefaultSingletonBeanRegist
 
     public ClassLoader getBeanClassLoader() {
         return this.beanClassLoader;
+    }
+
+    protected <T> T doGetBean(final String name, final Object[] args) {
+        Object sharedInstance = getSingleton(name);
+        if (sharedInstance != null) {
+            // 如果是 FactoryBean，则需要调用 FactoryBean#getObject
+            return (T) getObjectForBeanInstance(sharedInstance, name);
+        }
+
+        MyBeanDefinition beanDefinition = getBeanDefinition(name);
+        Object bean = createBean(name, beanDefinition, args);
+        return (T) getObjectForBeanInstance(bean, name);
+    }
+
+    private Object getObjectForBeanInstance(Object beanInstance, String beanName) {
+        if (!(beanInstance instanceof MyFactoryBean)) {
+            return beanInstance;
+        }
+
+        Object object = getCachedObjectForFactoryBean(beanName);
+
+        if (object == null) {
+            MyFactoryBean<?> factoryBean = (MyFactoryBean<?>) beanInstance;
+            object = getObjectFromFactoryBean(factoryBean, beanName);
+        }
+
+        return object;
     }
 }
