@@ -4,13 +4,12 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jacky.springframework.beans.MyBeansException;
 import com.jacky.springframework.beans.factory.*;
-import com.jacky.springframework.beans.factory.config.MyAutowireCapableBeanFactory;
-import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
-import com.jacky.springframework.beans.factory.config.MyBeanPostProcessor;
-import com.jacky.springframework.beans.factory.config.MyBeanReference;
+import com.jacky.springframework.beans.factory.config.*;
+import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 /**
  * @description: 自动装配的工厂
@@ -50,6 +49,11 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
     protected Object createBean(String beanName, MyBeanDefinition beanDefinition, Object[] args) throws MyBeansException {
         Object bean;
         try {
+            // 判断是否返回代理 Bean 对象
+            bean = resolveBeforeInstantiation(beanName, beanDefinition);
+            if (Objects.nonNull(bean)){
+                return bean;
+            }
             bean = createBeanInstance(beanName, beanDefinition, args);
             applyPropertyValues(beanName, bean, beanDefinition);
             //执行bean的初始化方法，和 初始化前后的处理器
@@ -63,6 +67,25 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
             addSingleton(beanName, bean);
         }
         return bean;
+    }
+
+    protected Object resolveBeforeInstantiation(String beanName, MyBeanDefinition beanDefinition) {
+        Object bean = applyBeanPostProcessorBeforeInstantiation(beanDefinition.getBeanClass(), beanName);
+        if (null != bean) {
+            bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+        }
+        return bean;
+    }
+
+    // 注意，此方法为新增方法，与 “applyBeanPostProcessorBeforeInitialization” 是两个方法
+    public Object applyBeanPostProcessorBeforeInstantiation(Class<?> beanClass, String beanName) throws MyBeansException {
+        for (MyBeanPostProcessor processor : getBeanPostProcessors()) {
+            if (processor instanceof MyInstantiationAwareBeanPostProcessor) {
+                Object result = ((InstantiationAwareBeanPostProcessor)processor).postProcessBeforeInstantiation(beanClass, beanName);
+                if (null != result) return result;
+            }
+        }
+        return null;
     }
 
     @Override

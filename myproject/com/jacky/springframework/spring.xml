@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean id="userDao" class="com.jacky.springframework.test.UserDao" init-method="initDataMethod" destroy-method="destroyDataMethod"/>
+    <bean id="userDao" class="com.jacky.springframework.test.UserDao" init-method="initDataMethod"
+          destroy-method="destroyDataMethod"/>
 
+    <!--配置访问者，代理增强器-->
+    <bean class="com.jacky.springframework.aop.DefaultAdvisorAutoProxyCreator"/>
+
+    <!--配置前置通知-->
+    <bean id="beforeAdvice" class="com.jacky.springframework.test.BeforeMapperAdvice"/>
+    <!--配置拦截器，具体执行方法的逻辑-->
+    <bean id="methodInterceptor" class="com.jacky.springframework.aop.adapter.MyMethodBeforeAdviceInterceptor">
+        <property name="advice" ref="beforeAdvice"/>
+    </bean>
+    <!--配置切入点切面拦截器-->
+    <bean id="pointcutAdvisor" class="com.jacky.springframework.aop.aspectj.MyAspectJExpressionPointcutAdvisor">
+        <property name="expression" value="execution(* com.jacky.springframework.test.IUserMapper.*(..))"/>
+        <property name="advice" ref="methodInterceptor"/>
+    </bean>
     <bean id="userService" class="com.jacky.springframework.test.UserService">
         <property name="uId" value="10001"/>
         <property name="userDao" ref="userDao"/>
         <property name="userMapper" ref="userMapperFactoryBean"/>
     </bean>
-
+    <bean id="userMapper" class="com.jacky.springframework.test.UserMapperImp"/>
     <bean class="com.jacky.springframework.test.UserServiceBeanPostProcessor"/>
     <bean class="com.jacky.springframework.test.UserServiceBeanFactoryProcessor"/>
-    <bean id ="userMapperFactoryBean" class="com.jacky.springframework.test.UserMapperFactoryBean"/>
+    <bean id="userMapperFactoryBean" class="com.jacky.springframework.test.UserMapperFactoryBean"/>
 </beans>

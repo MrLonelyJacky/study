@@ -117,4 +117,13 @@ public class SpringTest {
         IUserMapper proxy = (IUserMapper) new MyJdkDynamicAopProxy(myAdvisedSupport).getProxy();
         proxy.queryUserName("");
     }
+
+    @Test
+    public void test_BeanFactory9(){
+        MyClassPathXmlApplicationContext myClassPathXmlApplicationContext = new MyClassPathXmlApplicationContext("E:\\projectFile\\study\\myproject\\com\\jacky\\springframework\\spring.xml");
+        myClassPathXmlApplicationContext.registerShutdownHook();
+        myClassPathXmlApplicationContext.publishEvent(new CustomerEvent(myClassPathXmlApplicationContext,1L,"i love my mother and father"));
+        IUserMapper userMapper = (IUserMapper) myClassPathXmlApplicationContext.getBean("userMapper");
+        userMapper.queryUserName("aaa");
+    }
 }
