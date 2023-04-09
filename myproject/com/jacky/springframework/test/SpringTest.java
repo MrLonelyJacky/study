@@ -1,5 +1,9 @@
 package com.jacky.springframework.test;
 
+import com.jacky.springframework.aop.MyAdvisedSupport;
+import com.jacky.springframework.aop.TargetSource;
+import com.jacky.springframework.aop.framework.MyJdkDynamicAopProxy;
+import com.jacky.springframework.aop.aspectj.MyAspectJExpressionPointcut;
 import com.jacky.springframework.beans.factory.PropertyValue;
 import com.jacky.springframework.beans.factory.PropertyValues;
 import com.jacky.springframework.beans.factory.config.MyBeanDefinition;
@@ -8,7 +12,6 @@ import com.jacky.springframework.beans.factory.support.MyDefaultListableBeanFact
 import com.jacky.springframework.beans.factory.support.MyXmlBeanDefinitionReader;
 import com.jacky.springframework.context.MyClassPathXmlApplicationContext;
 import org.junit.Test;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
 public class SpringTest {
     @Test
@@ -97,5 +100,21 @@ public class SpringTest {
         myClassPathXmlApplicationContext.registerShutdownHook();
         myClassPathXmlApplicationContext.publishEvent(new CustomerEvent(myClassPathXmlApplicationContext,1L,"i love my mother and father"));
 
+    }
+
+
+    @Test
+    public void test_dynamic() {
+        //target object
+        IUserMapper userMapper = new UserMapperImp();
+
+        //组装代理信息
+        MyAdvisedSupport myAdvisedSupport = new MyAdvisedSupport();
+        myAdvisedSupport.setTargetSource(new TargetSource(userMapper));
+        myAdvisedSupport.setMethodInterceptor(new UserMapperInterceptor());
+        myAdvisedSupport.setMethodMatcher(new MyAspectJExpressionPointcut("execution(* com.jacky.springframework.test.IUserMapper.*(..))"));
+
+        IUserMapper proxy = (IUserMapper) new MyJdkDynamicAopProxy(myAdvisedSupport).getProxy();
+        proxy.queryUserName("");
     }
 }
