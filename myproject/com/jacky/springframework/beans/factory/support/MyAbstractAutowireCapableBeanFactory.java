@@ -18,7 +18,7 @@ import java.util.Objects;
  **/
 public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBeanFactory implements MyAutowireCapableBeanFactory {
 
-    private MyInstantiationStrategy instantiationStrategy = new CglibSubclassingInstantiationStrategy();
+    private MyInstantiationStrategy instantiationStrategy = new JdkInstantiationStrategy();
 
     @Override
     protected Object createBean(String beanName, MyBeanDefinition beanDefinition) throws MyBeansException {
@@ -81,7 +81,7 @@ public abstract class MyAbstractAutowireCapableBeanFactory extends MyAbstractBea
     public Object applyBeanPostProcessorBeforeInstantiation(Class<?> beanClass, String beanName) throws MyBeansException {
         for (MyBeanPostProcessor processor : getBeanPostProcessors()) {
             if (processor instanceof MyInstantiationAwareBeanPostProcessor) {
-                Object result = ((InstantiationAwareBeanPostProcessor)processor).postProcessBeforeInstantiation(beanClass, beanName);
+                Object result = ((MyInstantiationAwareBeanPostProcessor)processor).postProcessBeforeInstantiation(beanClass, beanName);
                 if (null != result) return result;
             }
         }

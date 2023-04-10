@@ -4,16 +4,15 @@ import com.jacky.springframework.aop.aspectj.MyAspectJExpressionPointcutAdvisor;
 import com.jacky.springframework.beans.MyBeansException;
 import com.jacky.springframework.beans.factory.MyBeanFactory;
 import com.jacky.springframework.beans.factory.MyBeanFactoryAware;
+import com.jacky.springframework.beans.factory.config.MyInstantiationAwareBeanPostProcessor;
 import com.jacky.springframework.beans.factory.support.MyDefaultListableBeanFactory;
+import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.PropertyValues;
-import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 
-import java.beans.PropertyDescriptor;
 import java.util.Collection;
 
-public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPostProcessor, MyBeanFactoryAware {
+public class DefaultAdvisorAutoProxyCreator implements MyInstantiationAwareBeanPostProcessor, MyBeanFactoryAware {
     private MyDefaultListableBeanFactory beanFactory;
 
     @Override
@@ -23,7 +22,7 @@ public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPos
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        //if (isInfrastructureClass(beanClass)) return null;
+        if (isInfrastructureClass(beanClass)) return null;
 
         Collection<MyAspectJExpressionPointcutAdvisor> advisors = beanFactory.getBeansOfType(MyAspectJExpressionPointcutAdvisor.class).values();
 
@@ -51,20 +50,10 @@ public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPos
         return null;
     }
 
-    @Override
-    public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-        return false;
+    private boolean isInfrastructureClass(Class<?> beanClass) {
+        return Advice.class.isAssignableFrom(beanClass) || MyPointcut.class.isAssignableFrom(beanClass) || MyAdvisor.class.isAssignableFrom(beanClass);
     }
 
-    @Override
-    public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
-        return null;
-    }
-
-    @Override
-    public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
-        return null;
-    }
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

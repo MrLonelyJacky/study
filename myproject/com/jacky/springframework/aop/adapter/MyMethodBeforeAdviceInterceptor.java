@@ -14,6 +14,9 @@ public class MyMethodBeforeAdviceInterceptor implements MethodInterceptor {
 
     private MyMethodBeforeAdvice advice;
 
+    public MyMethodBeforeAdviceInterceptor() {
+    }
+
     public MyMethodBeforeAdviceInterceptor(MyMethodBeforeAdvice advice) {
         this.advice = advice;
     }
